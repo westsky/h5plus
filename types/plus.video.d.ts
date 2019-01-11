@@ -6,22 +6,21 @@
 
 declare namespace plus.video {
   function createVideoPlayer(id: string, styles): VideoPlayer;
-  interface VideoPlayer {
-    // Methods
-    addEventListener(event, listener, capture);
-    setStyles(styles);
-    play();
-    pause();
-    seek(position);
-    requestFullScreen();
-    exitFullScreen();
-    stop();
-    hide();
-    show();
-    close();
-    sendDanmu(danmu);
-    playbackRate(rate);
-  }
-
-  interface VideoPlayerStyles {}
 }
+interface VideoPlayer {
+  // Methods
+  addEventListener(event, listener, capture);
+  setStyles(styles);
+  play();
+  pause();
+  seek(position);
+  requestFullScreen();
+  exitFullScreen();
+  stop();
+  hide();
+  show();
+  close();
+  sendDanmu(danmu);
+  playbackRate(rate);
+}
+interface VideoPlayerStyles {}

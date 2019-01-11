@@ -164,7 +164,7 @@ declare class APIRuntime {}
  * 可通过对象设置安装的应用是否进行appid校验、版本号校验等。
  * @description 可通过对象设置安装的应用是否进行appid校验、版本号校验等。
  */
-declare interface WidgetOptions {
+interface WidgetOptions {
   /**
    * 是否强制安装
    */
@@ -174,7 +174,7 @@ declare interface WidgetOptions {
 /**
  * JSON对象：应用信息
  */
-declare interface WidgetInfo {
+interface WidgetInfo {
   /**
    * 应用的APPID
    */
@@ -213,7 +213,7 @@ declare interface WidgetInfo {
   features: Array<string>;
 }
 
-declare interface OpenFileOptions {
+interface OpenFileOptions {
   /**
    * 优先使用的程序包名
    */
@@ -224,7 +224,7 @@ declare interface OpenFileOptions {
    */
   popover: string | any;
 }
-declare interface ApplicationInf {
+interface ApplicationInf {
   /**
    * 第三方程序包名
    */

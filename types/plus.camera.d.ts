@@ -7,48 +7,49 @@
 declare namespace plus.camera {
   function getCamera(index?: number): Camera;
   //空间成员
-  interface Camera {
-    //属性
-    readonly supportedImageResolutions: string[];
-    readonly supportedVideoResolutions: string[];
-    readonly supportedImageFormats: string[];
-    readonly supportedVideoFormats: string[];
+}
 
-    //方法
-    captureImage(
-      successCB: CameraSuccessCallback,
-      errorCB?: CameraErrorCallback,
-      option?: CameraOption
-    ): void;
-    startVideoCapture(
-      successCB: CameraSuccessCallback,
-      errorCB?: CameraErrorCallback,
-      option?: CameraOption
-    ): void;
-    stopVideoCapture(): void;
-  }
+interface Camera {
+  //属性
+  readonly supportedImageResolutions: string[];
+  readonly supportedVideoResolutions: string[];
+  readonly supportedImageFormats: string[];
+  readonly supportedVideoFormats: string[];
 
-  interface CameraOption {
-    filename?: string;
-    format?: string;
-    index?: string;
-    resolution?: string;
-    popover?: PopPosition;
-  }
+  //方法
+  captureImage(
+    successCB: CameraSuccessCallback,
+    errorCB?: CameraErrorCallback,
+    option?: CameraOption
+  ): void;
+  startVideoCapture(
+    successCB: CameraSuccessCallback,
+    errorCB?: CameraErrorCallback,
+    option?: CameraOption
+  ): void;
+  stopVideoCapture(): void;
+}
 
-  interface PopPosition {
-    top: string;
-    left: string;
-    width: string;
-    height: string;
-  }
+interface CameraOption {
+  filename?: string;
+  format?: string;
+  index?: string;
+  resolution?: string;
+  popover?: PopPosition;
+}
 
-  //回调委托
-  interface CameraSuccessCallback {
-    (path?: string): void;
-  }
+interface PopPosition {
+  top: string;
+  left: string;
+  width: string;
+  height: string;
+}
 
-  interface CameraErrorCallback {
-    (error?: DOMException): void | any; //匿名方法委托
-  }
+//回调委托
+interface CameraSuccessCallback {
+  (path?: string): void;
+}
+
+interface CameraErrorCallback {
+  (error?: DOMException): void | any; //匿名方法委托
 }

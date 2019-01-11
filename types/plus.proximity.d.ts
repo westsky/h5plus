@@ -40,22 +40,21 @@ declare namespace plus.proximity {
    * @param watchId 需要取消的距离监听器标识，调用watchProximity方法的返回值。
    */
   function clearWatch(watchId: number): void;
-
+}
+/**
+ * 获取设备接近距离信息成功的回调函数
+ */
+interface ProximitySuccessCallback {
   /**
-   * 获取设备接近距离信息成功的回调函数
+   * distance: ( number ) 必选 设备接近距离,设备接近距离传感器获取的距离值，单位为厘米。如果感应器无法获取准确的距离值，则在接近设备时返回0，否则返回Infinity。
+   * @param distance
    */
-  interface ProximitySuccessCallback {
-    /**
-     * distance: ( number ) 必选 设备接近距离,设备接近距离传感器获取的距离值，单位为厘米。如果感应器无法获取准确的距离值，则在接近设备时返回0，否则返回Infinity。
-     * @param distance
-     */
-    onSuccess(distance: number): void;
-  }
+  onSuccess(distance: number): void;
+}
 
-  /**
-   * 获取设备接近距离信息失败的回调函数
-   */
-  interface ProximityErrorCallback {
-    onError(error: DOMException): void;
-  }
+/**
+ * 获取设备接近距离信息失败的回调函数
+ */
+interface ProximityErrorCallback {
+  onError(error: DOMException): void;
 }

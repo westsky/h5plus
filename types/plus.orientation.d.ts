@@ -38,33 +38,32 @@ declare namespace plus.orientation {
    * @param watchId 需要取消的方向监听器标识，调用watchOrientation方法的返回值。
    */
   function clearWatch(watchId: number): void;
-
-  interface OrientationOption {
-    /**
-     * : (number 类型 ) 更新方向信息的时间间隔
-     */
-    frequency: number;
-  }
-
+}
+interface OrientationOption {
   /**
-   * JSON对象，设备方向信息数据
+   * : (number 类型 ) 更新方向信息的时间间隔
    */
-  interface Rotation {
-    readonly alpha: number;
-    readonly beta: number;
-    readonly gamma: number;
-    readonly magneticHeading: number;
-    readonly trueHeading: number;
-    readonly headingAccuracy: number;
-  }
+  frequency: number;
+}
 
-  interface OrientationSuccessCallback {
-    /**
-     * 设备的方向信息Rotation
-     */
-    (rotation: string): void;
-  }
-  interface OrientationErrorCallback {
-    (error?: DOMException): void;
-  }
+/**
+ * JSON对象，设备方向信息数据
+ */
+interface Rotation {
+  readonly alpha: number;
+  readonly beta: number;
+  readonly gamma: number;
+  readonly magneticHeading: number;
+  readonly trueHeading: number;
+  readonly headingAccuracy: number;
+}
+
+interface OrientationSuccessCallback {
+  /**
+   * 设备的方向信息Rotation
+   */
+  (rotation: string): void;
+}
+interface OrientationErrorCallback {
+  (error?: DOMException): void;
 }

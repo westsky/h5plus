@@ -189,7 +189,7 @@ declare namespace plus.webview {
   /**
    * 用于指定动画目标窗口，起始位置、目标位置等信息。
    */
-  class WebviewAnimationOptions {
+  interface WebviewAnimationOptions {
     //执行动画的窗口对象
     view: WebviewObject;
     //用于指定动画窗口的起始位置，目标位置等
@@ -200,31 +200,31 @@ declare namespace plus.webview {
   /**
    * 动画样式,用于指定动画窗口的起始位置、目标位置等信息。
    */
-  class WebviewAnimationStyles {
+  interface WebviewAnimationStyles {
     fromLeft: string;
     toLeft: string;
   }
 }
 //-=============================================
-declare class WebviewExtraOptions {}
+interface WebviewExtraOptions {}
 
-declare class AnimationTypeClose {}
+interface AnimationTypeClose {}
 
-declare class ShowParam {
+interface ShowParam {
   autoShow?: boolean;
   aniShow?: string;
   duration?: number;
   popGesture?: string;
 }
 
-declare class WaitingParam {
+interface WaitingParam {
   autoShow?: boolean;
   title?: string;
   options?: WindowStyles;
 }
 
-declare class AnimationTypeShow {}
-declare class WindowStyles {
+interface AnimationTypeShow {}
+interface WindowStyles {
   top?: number;
   bottom?: number;
   width?: number;
@@ -233,6 +233,6 @@ declare class WindowStyles {
   popGesture?: string;
 }
 
-declare interface WebviewStatusbarStyles {
+interface WebviewStatusbarStyles {
   background: string;
 }

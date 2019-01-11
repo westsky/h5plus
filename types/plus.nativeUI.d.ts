@@ -27,57 +27,56 @@ declare namespace plus.nativeUI {
    * @param options 可选 提示消息的参数
    */
   function toast(message: string, options?: ToastOptions): void;
+}
+//========================================================================
+//空间成员
+interface ToastOptions {
+  align?: string;
+  duration?: string;
+  icon?: string;
+  style?: string;
+  type?: string;
+  richTextStyle?: RichTextStyles;
+}
 
-  //========================================================================
-  //空间成员
-  class ToastOptions {
-    align?: string;
-    duration?: string;
-    icon?: string;
-    style?: string;
-    type?: string;
-    richTextStyle?: RichTextStyles;
-  }
+interface RichTextStyles {
+  align: string;
+  family: string;
+  fontSrc: string;
+  onClick: string;
+}
+//回调委托
 
-  interface RichTextStyles {
-    align: string;
-    family: string;
-    fontSrc: string;
-    onClick: string;
-  }
-  //回调委托
+interface Waiting {
+  close(): void;
+}
+interface WaitingOptions {
+  width: string;
+}
 
-  interface Waiting {
-    close(): void;
-  }
-  class WaitingOptions {
-    width: string;
-  }
+/**
+ * JSON对象，原生选择按钮框的样式参数
+ */
+interface ActionSheetStyles {
+  title?: string;
+  cancel?: string;
+  buttons?: Array<ActionButtonStyles>;
+}
 
-  /**
-   * JSON对象，原生选择按钮框的样式参数
-   */
-  class ActionSheetStyles {
-    title?: string;
-    cancel?: string;
-    buttons?: Array<ActionButtonStyles>;
-  }
+interface ActionButtonStyles {
+  color?: string;
+  title?: string;
+  style?: string;
+}
 
-  class ActionButtonStyles {
-    color?: string;
-    title?: string;
-    style?: string;
-  }
+interface NativeUIObj {
+  close(): void;
+}
 
-  interface NativeUIObj {
-    close(): void;
-  }
+interface ActionSheetCallback {
+  (event: ActionSheetEvent): void;
+}
 
-  interface ActionSheetCallback {
-    (event: ActionSheetEvent): void;
-  }
-
-  interface ActionSheetEvent extends Event {
-    index: number;
-  }
+interface ActionSheetEvent extends Event {
+  index: number;
 }
